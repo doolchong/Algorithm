@@ -1,0 +1,9 @@
+SELECT MEMBER_ID,
+       MEMBER_NAME,
+       GENDER,
+       SUBSTR(DATE_OF_BIRTH,1,10) as DATE_OF_BIRTH
+FROM MEMBER_PROFILE
+WHERE SUBSTR(DATE_OF_BIRTH, 6, 2) like "03" and
+      GENDER like "W" and
+      TLNO is not null
+ORDER BY 1
