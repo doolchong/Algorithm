@@ -1,0 +1,11 @@
+SELECT b.BOOK_ID,
+       a.AUTHOR_NAME,
+       b.PUBLISHED_DATE
+FROM (
+    SELECT BOOK_ID,
+           AUTHOR_ID,
+           SUBSTR(PUBLISHED_DATE, 1, 10) as PUBLISHED_DATE
+    FROM BOOK
+    WHERE CATEGORY = "경제"
+) as b join AUTHOR as a on b.AUTHOR_ID = a.AUTHOR_ID
+ORDER BY 3
