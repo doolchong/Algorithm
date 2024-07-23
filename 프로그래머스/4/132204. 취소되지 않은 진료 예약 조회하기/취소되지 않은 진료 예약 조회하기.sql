@@ -6,7 +6,7 @@ SELECT a.APNT_NO,
        a.APNT_YMD
 FROM PATIENT AS p join
      DOCTOR AS d join
-     APPOINTMENT AS a on d.DR_ID = a.MDDR_ID and p.PT_NO = a.PT_NO
+     APPOINTMENT AS a on p.PT_NO = a.PT_NO AND d.DR_ID = a.MDDR_ID
 WHERE SUBSTR(a.APNT_YMD,1,10) = "2022-04-13" AND
       a.MCDP_CD = "CS" AND
       APNT_CNCL_YN = "N"
