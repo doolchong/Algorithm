@@ -32,8 +32,10 @@ public class Main {
 
         for (int i = n; i <= m; i++) {
             if (isPrime[i]) {
-                System.out.println(i);
+                sb.append(i + "\n");
             }
         }
+
+        System.out.println(sb);
     }
 }
