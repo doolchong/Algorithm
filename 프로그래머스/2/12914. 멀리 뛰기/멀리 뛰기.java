@@ -1,24 +1,19 @@
 class Solution {
     public long solution(int n) {
-        long answer = 0;
-
-        long a = 1L;
-        long b = 1L;
-
-        for (int i = 1; i < n; i++) {
-            answer = (a + b) % 1234567;
-            a = b;
-            b = answer;
-        }
-
-        if (n == 0) {
-            return 0;
-        } else if (n == 1) {
-            return 1;
-        }
+            long answer = 0;
         
+            long[] arr = new long[n + 2];
 
-        return answer;
+            arr[0] = 0;
+            arr[1] = 1;
+            arr[2] = 2;
 
-    }
+            for (int i = 3; i <= n; i++) {
+                arr[i] = (arr[i - 1] + arr[i - 2]) % 1234567;
+            }
+
+            answer = arr[n];
+
+            return answer;
+        }
 }
